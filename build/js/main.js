@@ -1,14 +1,15 @@
 "use strict";
 // input task form
-const selectAppMenu = document.getElementById("input-table-app-menu");
+const selectAppMenu = document.getElementById("select-table-app-menu");
 const inputTableTopic = document.getElementById("input-table-topic");
 const inputTableDescription = document.getElementById("input-table-description");
-const selectTaskStatusMenu = document.getElementById("input-table-status-menu");
-const taskInputClearBtn = document.getElementById("input-table-clear-button");
-const taskInputSubmitFormBtn = document.getElementById("input-table-add-task-button");
+const selectTaskStatusMenu = document.getElementById("select-table-status-menu");
+const taskInputClearBtn = document.getElementById("table-clear-button");
+const taskInputSubmitFormBtn = document.getElementById("table-add-task-button");
+const taskInputTableForm = document.getElementById('task-input-table-form');
 // output tasks table
-const outputTable = document.getElementById("output-table");
-const outputTableBody = outputTable === null || outputTable === void 0 ? void 0 : outputTable.querySelector("tbody");
+const outputTableForm = document.getElementById('output-tasks-table-form');
+const outputTableBody = outputTableForm === null || outputTableForm === void 0 ? void 0 : outputTableForm.querySelector('tbody');
 let taskInputArray = {
     "app": "",
     "topic": "",
@@ -46,6 +47,7 @@ const newRowToOutputTable = () => {
         newRow.appendChild(cell);
     }
     outputTableBody === null || outputTableBody === void 0 ? void 0 : outputTableBody.appendChild(newRow);
+    taskInputTableForm === null || taskInputTableForm === void 0 ? void 0 : taskInputTableForm.reset();
 };
 selectAppMenu === null || selectAppMenu === void 0 ? void 0 : selectAppMenu.addEventListener("change", (event) => {
     const target = event.target;
@@ -67,6 +69,9 @@ selectTaskStatusMenu === null || selectTaskStatusMenu === void 0 ? void 0 : sele
     const targetValue = (target === null || target === void 0 ? void 0 : target.value) || "";
     taskInputArray["status"] = targetValue;
 });
+// clear all inputs in input task form
+taskInputClearBtn === null || taskInputClearBtn === void 0 ? void 0 : taskInputClearBtn.addEventListener('click', () => taskInputTableForm === null || taskInputTableForm === void 0 ? void 0 : taskInputTableForm.reset());
+// add new row with the data from inputs to output tasks table
 taskInputSubmitFormBtn === null || taskInputSubmitFormBtn === void 0 ? void 0 : taskInputSubmitFormBtn.addEventListener("click", (event) => {
     event.preventDefault();
     newRowToOutputTable();

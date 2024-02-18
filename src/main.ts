@@ -1,15 +1,16 @@
 // input task form
-const selectAppMenu: HTMLElement | null = document.getElementById("input-table-app-menu");
-const inputTableTopic: HTMLElement | null = document.getElementById("input-table-topic");
-const inputTableDescription: HTMLElement | null = document.getElementById("input-table-description");
-const selectTaskStatusMenu: HTMLElement | null = document.getElementById("input-table-status-menu");
-const taskInputClearBtn: HTMLElement | null = document.getElementById("input-table-clear-button");
-const taskInputSubmitFormBtn: HTMLElement | null = document.getElementById("input-table-add-task-button");
+const selectAppMenu = document.getElementById("select-table-app-menu") as HTMLSelectElement | null;
+const inputTableTopic = document.getElementById("input-table-topic") as HTMLInputElement | null;
+const inputTableDescription = document.getElementById("input-table-description") as HTMLInputElement | null;
+const selectTaskStatusMenu = document.getElementById("select-table-status-menu") as HTMLSelectElement | null;
+const taskInputClearBtn = document.getElementById("table-clear-button") as HTMLButtonElement | null;
+const taskInputSubmitFormBtn = document.getElementById("table-add-task-button") as HTMLButtonElement | null;
+
+const taskInputTableForm = document.getElementById('task-input-table-form') as HTMLFormElement | null;
 
 // output tasks table
-const outputTable: HTMLElement | null = document.getElementById("output-table");
-const outputTableBody: HTMLTableSectionElement | null | undefined = outputTable?.querySelector("tbody");
-
+const outputTableForm = document.getElementById('output-tasks-table-form') as HTMLFormElement | null;
+const outputTableBody = outputTableForm?.querySelector('tbody') as HTMLTableSectionElement | null;
 
 type Task = {
     app: string,
@@ -64,6 +65,7 @@ const newRowToOutputTable = () => {
         newRow.appendChild(cell);
     }
     outputTableBody?.appendChild(newRow);
+    taskInputTableForm?.reset()
 }
 
 selectAppMenu?.addEventListener("change", (event) => {
@@ -94,6 +96,10 @@ selectTaskStatusMenu?.addEventListener("change", (event) => {
     taskInputArray["status"] = targetValue;
 });
 
+// clear all inputs in input task form
+taskInputClearBtn?.addEventListener('click', () => taskInputTableForm?.reset())
+
+// add new row with the data from inputs to output tasks table
 taskInputSubmitFormBtn?.addEventListener("click", (event) => {
     event.preventDefault();
     newRowToOutputTable();
