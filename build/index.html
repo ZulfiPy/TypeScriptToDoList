@@ -13,7 +13,7 @@
     <main id="tables-content">
         <article class="app-article">
             <h1>INPUT TASK FORM</h1>
-            <form class="task-input-form">
+            <form class="task-input-form" id="task-input-table-form">
                 <table>
                     <thead>
                         <tr>
@@ -29,7 +29,7 @@
                     <tbody>
                         <tr>
                             <td>
-                                <select id="input-table-app-menu">
+                                <select id="select-table-app-menu">
                                     <option value="undefined app" hidden selected>choose an app</option>
                                     <option value="study">study</option>
                                     <option value="work">work</option>
@@ -46,9 +46,8 @@
                             </td>
 
                             <td>
-                                <select id="input-table-status-menu">
-                                    <option valud="" hidden>choose a status</option>
-                                    <option value="undefined status">undefined status</option>
+                                <select id="select-table-status-menu">
+                                    <option value="undefined status" hidden selected>choose a status</option>
                                     <option value="not started">not started</option>
                                     <option value="in-process">in-process</option>
                                     <option value="done">done</option>
@@ -56,19 +55,19 @@
                             </td>
 
                             <td>
-                                <button id="input-table-clear-button" type="button">clear</button>
+                                <button id="table-clear-button" type="button">clear</button>
                             </td>
                         </tr>
                     </tbody>
                 </table>
-                <button id="input-table-add-task-button" type="submit" class="submit-form-btn">ADD NEW TASK</button>
+                <button id="table-add-task-button" type="submit" class="submit-form-btn">ADD NEW TASK</button>
             </form>
         </article>
 
         <article class="app-article">
             <h1>OUTPUT TASKS TABLE</h1>
-            <form class="task-input-form">
-                <table id="output-table">
+            <form class="task-input-form" id="output-tasks-table-form">
+                <table>
                     <thead>
                         <tr>
                             <th>№</th>
@@ -82,7 +81,7 @@
                     </thead>
 
                     <tbody>
-
+                        
                     </tbody>
                 </table>
             </form>
@@ -90,8 +89,8 @@
 
         <article class="app-article">
             <h1>ARCHIVED TASKS TABLE</h1>
-            <form class="task-input-form">
-                <table id="archived-table">
+            <form class="task-input-form" id="archived-tasks-table-form">
+                <table>
                     <thead>
                         <tr>
                             <th>№</th>
