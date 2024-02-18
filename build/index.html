@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="js/main.js" defer></script>
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+
+<body>
+    <main id="tables-content">
+        <article class="app-article">
+            <h1>INPUT TASK FORM</h1>
+            <form class="task-input-form">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>app</th>
+                            <th>topic</th>
+                            <th>description</th>
+                            <th>status</th>
+                            <th>clear</th>
+                        </tr>
+                    </thead>
+
+
+                    <tbody>
+                        <tr>
+                            <td>
+                                <select id="input-table-app-menu">
+                                    <option value="undefined app" hidden selected>choose an app</option>
+                                    <option value="study">study</option>
+                                    <option value="work">work</option>
+                                    <option value="life">life</option>
+                                </select>
+                            </td>
+
+                            <td>
+                                <input id="input-table-topic" type="text" placeholder="javascript/leetcode">
+                            </td>
+
+                            <td>
+                                <input id="input-table-description" type="text" placeholder="describe the topic">
+                            </td>
+
+                            <td>
+                                <select id="input-table-status-menu">
+                                    <option valud="" hidden>choose a status</option>
+                                    <option value="undefined status">undefined status</option>
+                                    <option value="not started">not started</option>
+                                    <option value="in-process">in-process</option>
+                                    <option value="done">done</option>
+                                </select>
+                            </td>
+
+                            <td>
+                                <button id="input-table-clear-button" type="button">clear</button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                <button id="input-table-add-task-button" type="submit" class="submit-form-btn">ADD NEW TASK</button>
+            </form>
+        </article>
+
+        <article class="app-article">
+            <h1>OUTPUT TASKS TABLE</h1>
+            <form class="task-input-form">
+                <table id="output-table">
+                    <thead>
+                        <tr>
+                            <th>№</th>
+                            <th>app</th>
+                            <th>topic</th>
+                            <th>description</th>
+                            <th>status</th>
+                            <th>edit</th>
+                            <th>delete</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+
+                    </tbody>
+                </table>
+            </form>
+        </article>
+
+        <article class="app-article">
+            <h1>ARCHIVED TASKS TABLE</h1>
+            <form class="task-input-form">
+                <table id="archived-table">
+                    <thead>
+                        <tr>
+                            <th>№</th>
+                            <th>app</th>
+                            <th>topic</th>
+                            <th>description</th>
+                            <th>status</th>
+                            <th>edit</th>
+                            <th>delete</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+
+                    </tbody>
+                </table>
+            </form>
+        </article>
+    </main>
+</body>
+
+</html>
